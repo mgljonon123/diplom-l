@@ -6,6 +6,7 @@ import { FaBars } from "react-icons/fa";
 import Footer from "../components/Footer";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import "./styles/buttons.css";
 
 
 export default function Home() {
@@ -96,7 +97,7 @@ export default function Home() {
         </section>
 
 
-        <section id="section2" className="relative h-screen bg-[#ffffff] flex items-center justify-center px-4 md:px-32">
+        <section  id="section2" className="relative h-screen bg-[#ffffff] flex items-center justify-center px-4 md:px-32">
          <div className="absolute top-10 left-10 w-10 h-10 border-2 border-black rounded-full flex items-center justify-center text-2xl font-semibold text-black cursor-pointer hover:bg-black hover:text-white transition" onClick={scrollToTop}>
             Λ
           </div>
@@ -145,24 +146,104 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Marquee Animation Between Section2 and Section3 */}
+        <div className="relative w-full bg-[#f8f8f8] overflow-hidden py-2 border-y border-gray-200">
+          <div className="marquee whitespace-nowrap flex items-center">
+            <span className="font-semibold text-black mx-4">The Creative Pass</span>
+            <span className="mx-2 text-xl">🙂</span>
+            <span className="text-gray-700 mx-4">Watch all courses for just $12/month</span>
+            <span className="font-semibold text-black mx-4">The Creative Pass</span>
+            <span className="mx-2 text-xl">🙂</span>
+            <span className="text-gray-700 mx-4">Watch all courses for just $12/month</span>
+            <span className="font-semibold text-black mx-4">The Creative Pass</span>
+            <span className="mx-2 text-xl">🙂</span>
+            <span className="text-gray-700 mx-4">Watch all courses for just $12/month</span>
+            <span className="font-semibold text-black mx-4">The Creative Pass</span>
+            <span className="mx-2 text-xl">🙂</span>
+            <span className="text-gray-700 mx-4">Watch all courses for just $12/month</span>
+          </div>
+          <style jsx>{`
+            .marquee {
+              display: inline-block;
+              min-width: 100%;
+              animation: marquee 10s linear infinite;
+            }
+            @keyframes marquee {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+          `}</style>
+        </div>
 
 
-        <section id="section3" className="h-screen bg-[#f1f1f1] text-white flex items-center justify-center px-10 md:px-32 text-center relative">
-          <div className="absolute top-10 left-10 w-10 h-10 border-2 border-black rounded-full flex items-center justify-center text-2xl font-semibold text-black cursor-pointer hover:bg-black hover:text-white transition" onClick={scrollToTop}>
-            Λ
+
+        <section id="section3" className="h-screen bg-white flex items-center justify-center px-2 md:px-0 text-center relative">
+          <div className="w-full max-w-6xl mx-auto bg-white rounded-3xl shadow-2xl p-8 md:p-20 border border-gray-200">
+            <h2 className="text-3xl md:text-4xl font-semibold text-black mb-14 text-center">Түгээмэл асуулт, хариулт</h2>
+            <div className="space-y-6">
+              {/* FAQ Item 1 */}
+              <details className="group bg-transparent rounded-xl border border-gray-200 transition">
+                <summary className="flex items-center min-h-[56px] gap-4 cursor-pointer py-0 px-6 text-lg font-medium text-black group-open:text-[#222] justify-between">
+                  <span className="flex items-center gap-4">
+                    <span className="inline-block w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 text-2xl">🎓</span>
+                    Тэтгэлгээр сурч болох уу?
+                  </span>
+                  <svg className="w-6 h-6 text-gray-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <div className="px-14 pb-4 text-left text-gray-600">Тийм, манай сургууль тэтгэлэг олгодог. Дэлгэрэнгүй мэдээллийг элсэлтийн албанаас лавлана уу.</div>
+              </details>
+              {/* FAQ Item 2 */}
+
+              <details className="group bg-transparent rounded-xl border border-gray-200 transition">
+                <summary className="flex items-center min-h-[56px] gap-4 cursor-pointer py-0 px-6 text-lg font-medium text-black group-open:text-[#222] justify-between">
+                  <span className="flex items-center gap-4">
+                    <span className="inline-block w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 text-2xl">📈</span>
+                    MBTI (Myers-Briggs Type Indicator)
+                  </span>
+                  <svg className="w-6 h-6 text-gray-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <div className="px-14 pb-4 text-left text-gray-600">Хувь хүний сэтгэлзүйн төрөл, мэдээлэл боловсруулах, шийдвэр гаргах хэв маягийг тодорхойлдог. 16 төрлийн зан чанарын ангилалтай.  <br /> Жишээ: ENFP – урам зоригтой, бүтээлч сэтгэлгээтэй хүн.</div>
+              </details>
+              {/* FAQ Item 3 */}
+              <details className="group bg-transparent rounded-xl border border-gray-200 transition">
+                <summary className="flex items-center min-h-[56px] gap-4 cursor-pointer py-0 px-6 text-lg font-medium text-black group-open:text-[#222] justify-between">
+                  <span className="flex items-center gap-4">
+                    <span className="inline-block w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 text-2xl">🖥️</span>
+                    Holland Code (RIASEC)
+                  </span>
+                  <svg className="w-6 h-6 text-gray-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <div className="px-14 pb-4 text-left text-gray-600">Мэргэжлийн сонирхол, ажлын орчинтой хэр нийцэж байгааг хэмждэг. 6 үндсэн төрөлтэй: Realistic, Investigative, Artistic, Social, Enterprising, Conventional. <br /> Жишээ: Artistic – бүтээлч, уран сайхны мэргэжилд тохиромжтой.</div>
+              </details>
+              {/* FAQ Item 4 */}
+              <details className="group bg-transparent rounded-xl border border-gray-200 transition">
+                <summary className="flex items-center min-h-[56px] gap-4 cursor-pointer py-0 px-6 text-lg font-medium text-black group-open:text-[#222] justify-between">
+                  <span className="flex items-center gap-4">
+                    <span className="inline-block w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 text-2xl">📜</span>
+                    Big Five Personality Test
+                  </span>
+                  <svg className="w-6 h-6 text-gray-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <div className="px-14 pb-4 text-left text-gray-600">Хүний зан төлөвийг 5 гол хэмжүүрээр үнэлдэг: нээлттэй байдал, хариуцлагатай байдал, гадагш чиглэсэн байдал, эв найртай байдал, мэдрэмжийн тогтвортой байдал.  <br />
+                 Илүү гүн гүнзгий зан чанарын дүн шинжилгээ.</div>
+              </details>
+              {/* FAQ Item 5 */}
+              <details className="group bg-transparent rounded-xl border border-gray-200 transition">
+                <summary className="flex items-center min-h-[56px] gap-4 cursor-pointer py-0 px-6 text-lg font-medium text-black group-open:text-[#222] justify-between">
+                  <span className="flex items-center gap-4">
+                    <span className="inline-block w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center text-gray-700 text-2xl">👨‍🏫</span>
+                    EQ Test (Emotional Intelligence)
+                  </span>
+                  <svg className="w-6 h-6 text-gray-400 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" /></svg>
+                </summary>
+                <div className="px-14 pb-4 text-left text-gray-600">EQ Test (Emotional Intelligence)
+                       Өөрийн болон бусдын сэтгэл хөдлөлийг ойлгож, удирдах чадварыг үнэлдэг. <br/>
+                              Харилцаа, багийн ажил, стрессийн менежментэд чухал үүрэгтэй.</div>
+              </details>
           </div>
-          <div className="max-w-5xl mx-auto px-4 relative">
-            <h3 className="absolute top-[-10px] left-[-30px] text-[20px] text-black tracking-[0.2em] font-bold">АМЖИЛТЫН ТҮЛХҮҮР</h3>
-            <p className="mt-20 text-[36px] tracking-[0.0em] text-black leading-relaxed font-bold text-justify">
-              Мэргэжил гэдэг бол хүний хүсэл мөрөөдөл авьяас чадвар үнэт зүйлсийн уулзвар цэг.  
-              Бид танд сонголт нь зөвхөн ашигтай бус зорилготой үнэ цэнтэй амьдралтай байхад тусална.
-            </p>
-          </div>
-          <div className="absolute bottom-10 right-10 flex flex-col items-center text-gray-300">
-            <div className="w-px h-10 bg-gray-300"></div>
-            <span className="mt-2 text-xs tracking-widest transform rotate-90">SCROLL</span>
           </div>
         </section>
+
 
 
         <section id="section4" className="h-screen bg-white flex flex-col items-center justify-center px-6 md:px-32 relative">
@@ -211,286 +292,6 @@ export default function Home() {
       </main>
       <Menu isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       <Footer />
-
-      <style jsx>{`
-        button.learn-more {
-          width: 12rem;
-          height: auto;
-          position: relative;
-          display: inline-block;
-          cursor: pointer;
-          outline: none;
-          border: 0;
-          vertical-align: middle;
-          text-decoration: none;
-          background: transparent;
-          padding: 0;
-          font-size: inherit;
-          font-family: inherit;
-        }
-
-        button.learn-more .circle {
-          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-          position: relative;
-          display: block;
-          margin: 0;
-          width: 3rem;
-          height: 3rem;
-          background: #282936;
-          border-radius: 1.625rem;
-        }
-
-        button.learn-more:hover .circle {
-          width: 240px;
-          border-radius: 1.625rem;
-          background: #000;
-        }
-
-        button.learn-more .circle .icon {
-          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          margin: auto;
-          background: #fff;
-        }
-
-        button.learn-more .circle .icon.arrow {
-          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-          left: 0.625rem;
-          width: 1.125rem;
-          height: 0.125rem;
-          background: none;
-        }
-
-        button.learn-more .circle .icon.arrow::before {
-          position: absolute;
-          content: "";
-          top: -0.29rem;
-          right: 0.0625rem;
-          width: 0.625rem;
-          height: 0.625rem;
-          border-top: 0.125rem solid #fff;
-          border-right: 0.125rem solid #fff;
-          transform: rotate(45deg);
-        }
-
-        button.learn-more .button-text {
-          transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-          position: absolute;
-          top: 0;
-          left: 30;
-          right: 0;
-          bottom: 0;
-          padding: 0.75rem 0;
-          margin: 0 0 0 1.85rem;
-          color: #282936;
-          font-weight: 700;
-          line-height: 1.6;
-          text-align: left;
-          text-transform: uppercase;
-          white-space: nowrap;
-        }
-
-        button:hover .circle {
-          width: 100%;
-        }
-
-        button:hover .circle .icon.arrow {
-          background: #fff;
-          transform: translate(1rem, 0);
-        }
-
-        button:hover .button-text {
-          color: #fff;
-        }
-
-        .button-free {
-          width: 170px;
-          display: inline-block;
-          padding: 8px 20px;
-          border: 2px solid #4f4f4f;
-          border-radius: 6px;
-          transition: all 0.2s ease-in;
-          position: relative;
-          overflow: hidden;
-          font-size: 17px;
-          cursor: pointer;
-          color: white;
-          z-index: 1;
-        }
-
-        .button-free:before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%) scaleY(1) scaleX(1.25);
-          top: 100%;
-          width: 140%;
-          height: 180%;
-          background-color: rgba(0, 0, 0, 0.05);
-          border-radius: 50%;
-          display: block;
-          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-          z-index: -1;
-        }
-
-        .button-free:after {
-          content: "";
-          position: absolute;
-          left: 55%;
-          transform: translateX(-50%) scaleY(1) scaleX(1.45);
-          top: 180%;
-          width: 160%;
-          height: 190%;
-          background-color: #E94A1F;
-          border-radius: 50%;
-          display: block;
-          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-          z-index: -1;
-        }
-
-        .button-free:hover {
-          color: #ffffff;
-          border: 1px solid #E94A1F;
-        }
-
-        .button-free:hover:before {
-          top: -35%;
-          background-color: #E94A1F;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        }
-
-        .button-free:hover:after {
-          top: -45%;
-          background-color: #E94A1F;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        }
-
-        .button-pro {
-          width: 170px;
-          display: inline-block;
-          padding: 8px 20px;  
-          border: 2px solid #4f4f4f;
-          border-radius: 6px;
-          transition: all 0.2s ease-in;
-          position: relative;
-          overflow: hidden;
-          font-size: 17px;
-          cursor: pointer;
-          color: white;
-          z-index: 1;
-        }
-
-        .button-pro:before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%) scaleY(1) scaleX(1.25);
-          top: 100%;
-          width: 140%;
-          height: 180%;
-          background-color: rgba(0, 0, 0, 0.05);
-          border-radius: 50%;
-          display: block;
-          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-          z-index: -1;
-        }
-
-        .button-pro:after {
-          content: "";
-          position: absolute;
-          left: 55%;
-          transform: translateX(-50%) scaleY(1) scaleX(1.45);
-          top: 180%;
-          width: 160%;
-          height: 190%;
-          background-color: #E94A1F;
-          border-radius: 50%;
-          display: block;
-          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-          z-index: -1;
-        }
-
-        .button-pro:hover {
-          color: #ffffff;
-          border: 1px solid #E94A1F;
-        }
-
-        .button-pro:hover:before {
-          top: -35%;
-          background-color: #E94A1F;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        }
-
-        .button-pro:hover:after {
-          top: -45%;
-          background-color: #E94A1F;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        }
-
-        .button-plas {
-          width: 170px;
-          display: inline-block;
-          padding: 8px 20px;
-          border: 2px solid #4f4f4f;
-          border-radius: 6px;
-          transition: all 0.2s ease-in;
-          position: relative;
-          overflow: hidden;
-          font-size: 17px;
-          cursor: pointer;
-          color: white;
-          z-index: 1;
-        }
-
-        .button-plas:before {
-          content: "";
-          position: absolute;
-          left: 50%;
-          transform: translateX(-50%) scaleY(1) scaleX(1.25);
-          top: 100%;
-          width: 140%;
-          height: 180%;
-          background-color: rgba(0, 0, 0, 0.05);
-          border-radius: 50%;
-          display: block;
-          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-          z-index: -1;
-        }
-
-        .button-plas:after {
-          content: "";
-          position: absolute;
-          left: 55%;
-          transform: translateX(-50%) scaleY(1) scaleX(1.45);
-          top: 180%;
-          width: 160%;
-          height: 190%;
-          background-color: #E94A1F;
-          border-radius: 50%;
-          display: block;
-          transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
-          z-index: -1;
-        }
-
-        .button-plas:hover {
-          color: #ffffff;
-          border: 1px solid #E94A1F;
-        }
-
-        .button-plas:hover:before {
-          top: -35%;
-          background-color: #E94A1F;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        }
-
-        .button-plas:hover:after {
-          top: -45%;
-            background-color: #E94A1F;
-          transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
-        }
-      `}</style>
     </>
   );
 }

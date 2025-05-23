@@ -169,7 +169,7 @@ export default function Profile() {
         </div>
       </div>
 
-      <div className="w-full h-24 sm:h-32 rounded-2xl mb-8 sm:mb-12 bg-gradient-to-r from-[#F59E0B] to-[#F59E0B] flex items-end px-6 sm:px-10 shadow-md" />
+      <div className="w-full h-24 sm:h-32 rounded-2xl mb-8 sm:mb-12 bg-gradient-to-r from-[#C7E0FF] to-[#FFF2D1] flex items-end px-6 sm:px-10 shadow-md" />
 
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 items-stretch w-full">
         <div className="w-full lg:flex-1 flex-grow basis-0">

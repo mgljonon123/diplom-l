@@ -168,7 +168,7 @@ export default function SettingsPage() {
       </div>
 
       {/* Gradient Banner */}
-      <div className="w-full h-24 rounded-xl mb-10 bg-gradient-to-r from-[#F59E0B] to-[#F59E0B] flex items-end px-8 py-4 shadow-sm animate-fadeIn">
+      <div className="w-full h-24 rounded-xl mb-10 bg-gradient-to-r from-[#C7E0FF] to-[#FFF2D1] flex items-end px-8 py-4 shadow-sm animate-fadeIn">
         
         <h2 className="text-2xl font-bold text-white mb-4">Таны профайлын тохиргоо</h2>
       </div>
